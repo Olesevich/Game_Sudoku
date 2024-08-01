@@ -21,7 +21,7 @@ public class DateBase {
             //inseret_info_BD();//добавляет в бд значение
             //update_BD();//изменение колонки в бд
             //delete_BD();//удаление строки в бд
-            select_BD();//читает все значение с бд
+            //select_BD();//читает все значение с бд
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -172,15 +172,15 @@ public class DateBase {
     }
 
     public Object[][] retun_select_BD_Tables(int a, int b) {//для проверки и для тренировки, опрос что есть в базе
-        Object objekt [][] = new Object[a][b];
+        Object objekt [][] = new Object[b][b];
         try {
             statement.setFetchSize(100);
             resultSet = statement.executeQuery("SELECT * FROM test");
             int z = 0;
             while (resultSet.next()) {
-                objekt[z][a-3] = resultSet.getString(2);
-                objekt[z][a-2] = resultSet.getInt(4);
-                objekt[z][a-1] = resultSet.getInt(3);
+                objekt[z][0] = resultSet.getString(2);
+                objekt[z][1] = resultSet.getInt(4);
+                objekt[z][2] = resultSet.getInt(3);
                 z++;
             }
             c.close();
@@ -189,5 +189,6 @@ public class DateBase {
         }
         return objekt;
     }
+
 
 }

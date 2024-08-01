@@ -8,9 +8,7 @@ import java.awt.event.ActionListener;
 public class GamePlay extends JPanel {
 
 
-    public static JPanel panel;
-    public static JPanel panel2;
-    public static JPanel panel3;
+    public static JPanel panel, panel2, panel3;
     public int nubmer;
     private JButton btnNewButton_1;
     private JButton btnNewButton_2;
@@ -240,6 +238,8 @@ public class GamePlay extends JPanel {
 
         panel2.setVisible(false);
     }
+
+
 
     public void destButton(JButton but, final int a){
         but.addActionListener(new ActionListener() {

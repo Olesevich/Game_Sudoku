@@ -14,9 +14,9 @@ public class StartWindow extends JPanel {
     private final JPanel panel;
     private JTextField textField;
     private JPanel panel_1;
-    private JToggleButton tglbtnNewToggleButton;
-    private JToggleButton tglbtnNewToggleButton_1;
-    private JToggleButton tglbtnNewToggleButton_2;
+    private JToggleButton tglbtnNewToggleButton, tglbtnNewToggleButton_1, tglbtnNewToggleButton_2;
+    //private JToggleButton tglbtnNewToggleButton_1;
+    //private JToggleButton tglbtnNewToggleButton_2;
     public static int level;
     private JButton btnNewButton_2;
     private JComboBox comboBox;
@@ -51,7 +51,7 @@ public class StartWindow extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 tglbtnNewToggleButton_1.setSelected(false);
                 tglbtnNewToggleButton_2.setSelected(false);
-                level = 80;//времено
+                level = 50;
                 startButton(tglbtnNewToggleButton);
             }
         });

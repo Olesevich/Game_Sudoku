@@ -66,8 +66,7 @@ public class CreatingGameArray {
         if (sum == 9){
             winner = true;
             superWin = true;
-            vivodMassiva();//пока в тести потом закаментила
-            System.out.println("Победа!!!");
+            //vivodMassiva();//пока в тести потом закаментила
         }
     }
 

@@ -9,8 +9,7 @@ public class Game {
     private static int p;
     private static boolean winnerWinner;
     private static Object perevodNameObek;
-    private int a;
-    private int b;
+    private int a, b;
 
 
 

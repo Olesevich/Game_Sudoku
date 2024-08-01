@@ -38,7 +38,6 @@ public class Tables {
         DateBase dateBase = new DateBase(1);
         array = new String [columnsHeader.length][dateBase.select_BD_Tables()];
         array = dateBase.retun_select_BD_Tables(columnsHeader.length, dateBase.select_BD_Tables());
-
     }
 
     private void creatPanel(){
@@ -62,8 +61,5 @@ public class Tables {
             }
         });
     }
-
-
-
 
 }
