@@ -29,7 +29,7 @@ public class DateBase {
         }
     }
 
-    public DateBase(int i){
+    public DateBase(int i) {
         try {
             podkluchenie_k_BD();
 
@@ -41,12 +41,13 @@ public class DateBase {
         }
     }
 
-    public void podkluchenie_k_BD()throws SQLException, ClassNotFoundException {
+    public void podkluchenie_k_BD() throws SQLException, ClassNotFoundException {
         Class.forName(driv);
         c = DriverManager.getConnection(url, user, password);
         statement = c.createStatement();
 
     }
+
     public void select_BD() {//для проверки и для тренировки, опрос что есть в базе
         try {
             String qure = "SELECT * FROM test";
@@ -75,7 +76,7 @@ public class DateBase {
         }
     }
 
-    private void update_BD(){//для тренировки
+    private void update_BD() {//для тренировки
         try {
             int elem = statement.executeUpdate("UPDATE test SET Id = 5 WHERE name = 'sasa'");
         } catch (SQLException e) {
@@ -83,7 +84,7 @@ public class DateBase {
         }
     }
 
-    private void delete_BD(){//для тренировки
+    private void delete_BD() {//для тренировки
         try {
             int elem = statement.executeUpdate("DELETE FROM test WHERE Id > 1");
         } catch (SQLException e) {
@@ -92,7 +93,7 @@ public class DateBase {
 
     }
 
-    public ArrayList<String> vivod_bd_na_ikran(){//для программы
+    public ArrayList<String> vivod_bd_na_ikran() {//для программы
         try {
             String qure = "SELECT * FROM test";
             statement.setFetchSize(100);
@@ -109,12 +110,12 @@ public class DateBase {
         return arrayBD;
     }
 
-    public void addPlayerBD(String namePlayer){
+    public void addPlayerBD(String namePlayer) {
         try {
             PreparedStatement ps = c.prepareStatement("INSERT INTO test(name, win, games) VALUES (?,?,?)");
             ps.setString(1, namePlayer);
             ps.setInt(2, 0);
-            ps.setInt(3,0);
+            ps.setInt(3, 0);
             ps.executeUpdate();
             ps.close();
 
@@ -123,9 +124,9 @@ public class DateBase {
         }
     }
 
-    public void deletePlayerBD(String namePlayer){
+    public void deletePlayerBD(String namePlayer) {
         try {
-           // int elem = statement.executeUpdate("DELETE FROM test WHERE name = namePlayer");
+            // int elem = statement.executeUpdate("DELETE FROM test WHERE name = namePlayer");
             PreparedStatement ps = c.prepareStatement("DELETE FROM test WHERE name = ?");
             ps.setString(1, namePlayer);
             ps.executeUpdate();
@@ -135,10 +136,10 @@ public class DateBase {
         }
     }
 
-    public void gamesPlayed (Object namePlayer){
+    public void gamesPlayed(Object namePlayer) {
         try {
             PreparedStatement ps = c.prepareStatement("UPDATE test SET games = games+1 WHERE name = ?");
-            ps.setObject(1,namePlayer);
+            ps.setObject(1, namePlayer);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
@@ -146,10 +147,10 @@ public class DateBase {
         }
     }
 
-    public void winPlayed (Object namePlayer){
+    public void winPlayed(Object namePlayer) {
         try {
             PreparedStatement ps = c.prepareStatement("UPDATE test SET win = win+1 WHERE name = ?");
-            ps.setObject(1,namePlayer);
+            ps.setObject(1, namePlayer);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
@@ -172,7 +173,7 @@ public class DateBase {
     }
 
     public Object[][] retun_select_BD_Tables(int a, int b) {//для проверки и для тренировки, опрос что есть в базе
-        Object objekt [][] = new Object[b][b];
+        Object objekt[][] = new Object[b][b];
         try {
             statement.setFetchSize(100);
             resultSet = statement.executeQuery("SELECT * FROM test");

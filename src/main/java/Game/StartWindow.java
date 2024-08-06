@@ -38,7 +38,7 @@ public class StartWindow extends JPanel {
     }
 
 
-    public void levelSelection(){
+    public void levelSelection() {
         comboBox = new JComboBox();
         comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 16));
         comboBox.setBounds(34, 80, 202, 28);
@@ -125,7 +125,7 @@ public class StartWindow extends JPanel {
                 panel.setVisible(false);
                 panel_1.setVisible(false);
                 new DateBase();
-                DateBase dateBase = new DateBase (1);//для тестов бд
+                DateBase dateBase = new DateBase(1);//для тестов бд
                 dateBase.gamesPlayed(comboBox.getSelectedItem());
                 new Game(comboBox.getSelectedItem());
                 MainWindow.jf.add(new GamePlay());
@@ -149,12 +149,12 @@ public class StartWindow extends JPanel {
         btnNewButton_2_2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            new Tables(panel);
+                new Tables(panel);
             }
         });
     }
 
-    public void vodNewPlayer(){
+    public void vodNewPlayer() {
         JLabel lblNewLabel_2 = new JLabel("Введите имя нового игрока");
         lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 18));
         lblNewLabel_2.setBounds(110, 26, 260, 37);
@@ -181,14 +181,13 @@ public class StartWindow extends JPanel {
 
     }
 
-    public void startButton(JToggleButton but){
-        if(but.isSelected()){
+    public void startButton(JToggleButton but) {
+        if (but.isSelected()) {
             btnNewButton_2.setEnabled(true);
-        }
-        else btnNewButton_2.setEnabled(false);
+        } else btnNewButton_2.setEnabled(false);
     }
 
-    private void loadDataBasik(){
+    private void loadDataBasik() {
         comboBox.removeAllItems();
         DateBase dateBase = new DateBase(1);
         ArrayList<String> arrayList = dateBase.vivod_bd_na_ikran();
@@ -197,17 +196,17 @@ public class StartWindow extends JPanel {
         }
     }
 
-    private void deletePlayerDataBasik(){
+    private void deletePlayerDataBasik() {
         DateBase dateBase = new DateBase(1);
         dateBase.deletePlayerBD(comboBox.getSelectedItem().toString());
     }
 
-    private void addPlayerDataBasik(){
+    private void addPlayerDataBasik() {
         DateBase dateBase = new DateBase(1);
         dateBase.addPlayerBD(textField.getText());
     }
 
-    public  Object namePlauerGames(){
+    public Object namePlauerGames() {
         Object ob = (comboBox.getSelectedItem());
         return ob;
     }

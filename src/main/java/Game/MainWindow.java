@@ -12,10 +12,10 @@ public class MainWindow {
     public MainWindow() {
         jf = new JFrame();
         jf.setTitle("Sudoku 9x9");
-        jf.setSize(WIDTH,HIEGTH);
+        jf.setSize(WIDTH, HIEGTH);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setLayout(null);
-         jf.add(new StartWindow());
+        jf.add(new StartWindow());
         jf.setLocationRelativeTo(null);
         jf.setResizable(true);
         jf.setVisible(true);
@@ -26,7 +26,7 @@ public class MainWindow {
         start();
     }
 
-    public static void start(){
+    public static void start() {
         new CreatingGameArray();
 //        new Game();
         new MainWindow();
